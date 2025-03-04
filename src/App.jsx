@@ -12,8 +12,9 @@ function App() {
   // console.log(data)
   const [loc, setLoc] = useState(6);
   const [data, setData] = useState([
-    [1, 2],
-    [3,4]
+    [1, 2,3],
+    [4,5,6],
+    [7,8,9],
   ]);
   useEffect(()=>console.log( Checking(loc,data) )  )
   return (
