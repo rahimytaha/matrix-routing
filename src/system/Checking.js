@@ -32,7 +32,7 @@ export function Checking(startId,endId,allData) {
             // console.log(nowData, target2)
             if (target2 == endId) {
                 // alert(nowData)
-                console.log(nowData,"- ended")
+                // console.log(nowData,"- ended")
 
                 founded_Routes.push(nowData)
             }
@@ -46,7 +46,7 @@ export function Checking(startId,endId,allData) {
         // console.log(R)
     }
 
-    console.log(founded_Routes,"ended")
+    // console.log(founded_Routes,"ended")
     return founded_Routes
 }
 

@@ -10,21 +10,26 @@ import { Checking } from './system/Checking';
 function App() {
   // const [data, setCount] = useState([{id:1,distance:50,child:[{id:2,distance:50,child:[{id:3,distance:50,child:[{id:4,distance:50,child:[]},{id:5,distance:50,child:[]}]},{id:6,distance:50,child:[{id:7,distance:50,child:[]},{id:8,distance:50,child:[]}]}]},{id:9,distance:50,child:[]}]}]);
   // console.log(data)
+
   const [loc, setLoc] = useState(6);
+  const [list, setList] = useState([]);
   const [data, setData] = useState([
-    [1, 2,3],
-    [4,5,6],
-    [7,8,9],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
   ]);
-  useEffect(()=>console.log( Checking(loc,data) )  )
+  useEffect(() => setList(Checking(1, 5, [1, 2, 3, 4, 5, 6, 7, 8, 9])),[])
   return (
-    <>
+    <div >
       {/* <div style={{width:50}} className='line   '></div> */}
-      {/* <Provider data={data} /> */}
-      {data.map(el=><div style={{color:"white",display:"flex"}}>
-        {el .map(el2=><div style={{color:"white",padding:"80px",border:"1px solid #ffd ",fontSize:"32px"}} >{el2}</div>)}
-      </div>)}
-    </>
+      {/* {console.log(list)} */}
+      {list && list.map(el_color => {
+        console.log(el_color)
+       return data.map(el => <div style={{ color: "white", display: "flex",gap:"20px", margin:"20px"}}>
+          {el.map(el2 => <div style={{ color: "white", padding: "80px", border: "1px solid #ffd ", fontSize: "32px" ,background:el_color.find(col=>col==el2) ? "blue":"red" }} >{el2}</div>)}
+        </div>)
+      })}
+    </div>
   )
 }
 
