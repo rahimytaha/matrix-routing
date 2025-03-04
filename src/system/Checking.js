@@ -14,20 +14,22 @@ export function Checking(loc, data) {
 
 
     // firstRt.routes.map(el => choosing(el));
-    choosing([1,2])
+    choosing([1, 2])
 
     function choosing(R) {
         let length = R.length;
         let target = R[length - 1]
 
         let nextR = routes.find(el => el.x == target);
-        console.log(target,nextR.routes);
-        
+        // console.log(target,nextR.routes);
+        nextR.routes = nextR.routes.filter(el => el[el.length - 1] >target);
+        console.log(nextR)
         // let cos = nextR.routes.map(el => {
         //     let length2 = el.length;
         //     let target2 = el[length2 - 1]
-        //     let i = R.push(target2)
-        //     console.log(i, R, el)
+        //     // let i = R.push(target2)
+        //     // console.log(i, R, el)
+        //     console.log(el)
         // })
         // console.log(cos)
     }
