@@ -14,11 +14,10 @@ function App() {
   const [loc, setLoc] = useState(6);
   const [list, setList] = useState([]);
   const [data, setData] = useState([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+    [1, 2],
+    [3, 4]
   ]);
-  useEffect(() => setList(Checking(1, 5, [1, 2, 3, 4, 5, 6, 7, 8, 9])),[])
+  useEffect(() => setList(Checking(2, 4, [1, 2, 3, 4  ])),[])
   return (
     <div >
       {/* <div style={{width:50}} className='line   '></div> */}
